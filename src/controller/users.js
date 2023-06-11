@@ -30,14 +30,14 @@ const createNewUsers = async (req, res) => {
     }
 }
 const updateUsers = async (req, res) => {
-    const {idUser} = req.params;
+    const {id} = req.params;
     const {body} = req
     try {
-        await usersModels.updateUsers(body, idUser)
+        await usersModels.updateUsers(body, id)
             res.json({
                 message: 'update users',
                 data: {
-                    id: idUser,
+                    id: id,
                     body
                 }
             })
@@ -49,9 +49,9 @@ const updateUsers = async (req, res) => {
     }
 }
 const deleteUsers = async (req, res) => {
-    const {idUser} = req.params;
+    const {id} = req.params;
     try {
-        await usersModels.deleteUsers(idUser)
+        await usersModels.deleteUsers(id)
         res.json({
             message: 'delete users',
             data: null

@@ -9,13 +9,13 @@ const createNewUsers = (body) => {
                         VALUES('${body.name}', '${body.email}', '${body.address}')`;
     return dbPool.execute(SQLQuery);
 }
-const updateUsers = (body, idUser) => {
+const updateUsers = (body, id) => {
     const SQLQuery = ` UPDATE users SET name='${body.name}', email='${body.email}', address='${body.address}'
-                        WHERE id=${idUser} `;
+                        WHERE id=${id} `;
     return dbPool.execute(SQLQuery);
 }
-const deleteUsers = (idUser) => {
-    const SQLQuery = `DELETE FROM users WHERE id=${idUser}`;
+const deleteUsers = (id) => {
+    const SQLQuery = `DELETE FROM users WHERE id=${id}`;
     return dbPool.execute(SQLQuery);
 }
 
